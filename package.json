@@ -1,0 +1,22 @@
+{
+  "name": "brew-cokkie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "RecipieJson.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bytes": "^2.4.0",
+    "content-type": "^1.0.2",
+    "cookie-parser": "^1.4.3",
+    "depd": "^1.1.0",
+    "express": "^4.14.0",
+    "http-errors": "^1.5.1",
+    "raw-body": "^2.1.7"
+  }
+}
