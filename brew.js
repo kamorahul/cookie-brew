@@ -23,10 +23,10 @@ app.use(express.static('public'))
 app.post('/brew', (req, res) => {
     var cookie =  req.cookies;
     if(cookie.token_id){
-        res.json(RecipieJson.visitor)
+        res.json(RecipieJson.cookieUser)
     }
     else{
-      res.json(RecipieJson.cookieUser)
+      res.json(RecipieJson.visitor)
     }  
 })
 
