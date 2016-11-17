@@ -6,7 +6,7 @@ app.use(cookieParser());
 var RecipieJson = require("./RecipieJson")
 
 
-  app.listen(process.env.PORT || 3000, () => {
+   app.listen(process.env.PORT || 3001,function(){
     console.log('listening on 3000')
   })
 
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
-app.post('/brew', (req, res) => {
+app.post('/brew', function(req, res){
     var cookie =  req.cookies;
     if(cookie.token_id){
         res.json(RecipieJson.cookieUser)
@@ -30,8 +30,8 @@ app.post('/brew', (req, res) => {
     }  
 })
 
-app.post('/setcookie', (req, res) => {
-  var user_id =  req.query;
+app.post('/setcookie', function(req, res){  
+      var user_id =  req.query;
       res.cookie('token_id', user_id, {maxAge: 86400000, httpOnly: true});
       res.json({success : true})
 })
