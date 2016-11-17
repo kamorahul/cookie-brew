@@ -30,7 +30,7 @@ app.post('/brew', function(req, res){
     }  
 })
 
-app.post('/setcookie', function(req, res){  
+app.get('/setcookie', function(req, res){  
       var user_id =  req.query;
       res.cookie('token_id', user_id, {maxAge: 86400000, httpOnly: true});
       res.json({success : true})
