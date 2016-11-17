@@ -12,7 +12,9 @@ var RecipieJson = require("./RecipieJson")
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", 
+    "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Credentials", true)
   next();
 });
 
@@ -22,7 +24,8 @@ app.use(express.static('public'))
 
 app.post('/brew', function(req, res){
     var cookie =  req.cookies;
-    if(cookie.token_id){
+	console.log("req.body.token_id",req.body.token_id)
+    if(req.body.token_id){
         res.json(RecipieJson.cookieUser)
     }
     else{
@@ -34,5 +37,14 @@ app.get('/setcookie', function(req, res){
       var user_id =  req.query;
       res.cookie('token_id', user_id, {maxAge: 86400000, httpOnly: true});
       res.json({success : true})
-})
+});
+
+
+app.get('/checkcookie', function(req, res){  
+      var cookie =  req.cookies;
+      console.log(cookie)
+      res.json({success : true})
+});
+
+
 
