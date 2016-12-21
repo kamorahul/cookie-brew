@@ -26,7 +26,7 @@ app.post('/brew', function(req, res){
     var cookie =  req.cookies;
 	console.log("req.body.token_id",req.body.token_id)
     if(req.body.token_id){
-        res.json(RecipieJson.cookieUser)
+        res.json(RecipieJson.CookieUser)
     }
     else{
       res.json(RecipieJson.visitor)
