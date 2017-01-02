@@ -28,7 +28,7 @@ var launcher = {
             {
                 "element_type" : "link",
                 "element_data" : {
-                    href : "#" ,
+                    href : "http://google.com" ,
                     display : "HAVE A LOOK"
                 },
                 "element_id" : "",
@@ -109,7 +109,7 @@ module.exports = {
             {
                 "container_id": "widget",
                 "container_context": {
-                    "properties": launcher.greeter,
+                    "properties": launcher.launch,
                     "actions":[
                         {
                             "element_id" : "betaout_action",
@@ -128,15 +128,17 @@ module.exports = {
                         "BoutMessengerInbox" : true,
                         "BoutTeamMembers" : true,
                         "BoutMessengerUserInfo" : true,
-                        "BoutMessengerUserIntro" : true,
-                        "BoutMessengerVerifyOtp" : true,
+                        "BoutMessengerUserIntro" : false,
+                        "BoutMessengerVerifyOtp" : false,
                         "userstate" : {
                             "project_id" : "20000",
                             "uuid" : "57fe4b504600006b00b0a8b4",
                             "email" : "kamo.rahul@gmail.com",
-                            "cookie" : true
+                            "cookie" : true,
+                            "agent_id" : "34j23jg23413jh1234g23j4h123jh"
                         },
-                        "default" : "BoutMessengerInbox"
+                        "default" : "BoutMessengerInbox",
+                        // "banner_type" : "floater"
                     }
                 }
             }
@@ -147,11 +149,11 @@ module.exports = {
             {
                 "container_id": "widget",
                 "container_context": {
-                    "properties": launcher.floater,
+                    "properties": launcher.launch,
                     "actions":[
                         {
                             "element_id" : "betaout_action",
-                            "action_type": "onmouseover",
+                            "action_type": "onclick",   //greeter "onclick" //floater "onmouseover"
                             "action_impact": "function",
                             "action_data": "activateChat"
                         }
@@ -167,16 +169,15 @@ module.exports = {
                         "BoutMessengerInbox" : true,
                         "BoutTeamMembers" : true,
                         "BoutMessengerUserInfo" : true,
-                        "BoutMessengerUserIntro" : true,
+                        "BoutMessengerUserIntro" : false,
                         "BoutMessengerVerifyOtp" : true,
                         "userstate" : {
                             "project_id" : "20000",
                             "campaign_id" : "",
-                            "agent_id" : "34j23jg23413jh1234g23j4h123jh",
-                            "content" : "Over 100 local and international brands curated just for you"
+                            "agent_id" : "34j23jg23413jh1234g23j4h123jh"
                         },
-                        "default" : "BoutMessengerChatArea",
-                        "banner_type" : "floater"
+                        "default" : "BoutMessengerUserInfo",
+                        "banner_type" : "floater"    //floater
                     }
                 }
             }
