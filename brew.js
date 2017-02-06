@@ -6,7 +6,7 @@ app.use(cookieParser());
 var RecipieJson = require("./RecipieJson")
 
    app.listen(process.env.PORT || 3001,function(){
-    console.log('listening on 3000')
+    console.log('listening on 3001')
   })
 
 app.use(function (req, res, next) {
@@ -26,8 +26,12 @@ app.post('/brew', function(req, res){
     var brewerData = req.body ? req.body : {};
 
 	console.log("req.body.token_id",req.body.token_id)
-	console.log("req.body.user_data.email",req.body.token_id)
+	console.log("req.body.user_data.email",req.body.user_data.email)
     if(req.body.token_id){
+        var user_state = RecipieJson.CookieUser[1].container_context.properties.userstate;
+        user_state.uuid = brewerData.token_id;
+        user_state.email = brewerData.user_data.email;
+
         res.json(RecipieJson.CookieUser)
     }
     else{
