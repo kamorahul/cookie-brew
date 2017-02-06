@@ -21,7 +21,7 @@ var launcher = {
         },{
             "element_type" : "div",
             "element_data" : "Over 100 local and international brands curated just for you",
-            "element_id" : "",
+            "element_id" : "bout_conv_sub",
             "element_class" : "bout-floater__text",
 
         },
@@ -54,7 +54,7 @@ var launcher = {
                     {
                         "element_type" : "div",
                         "element_data" : "Over 100 local and international brands curated just for you",
-                        "element_id" : "",
+                        "element_id" : "bout_conv_sub",
                         "element_class" : "bout-greeter__text",
                     },
                     {
@@ -104,7 +104,7 @@ var launcher = {
     }
 }
 module.exports = {
-    CookieUser : {
+    visitor : {
         "containers": [
             {
                 "container_id": "widget",
@@ -131,25 +131,21 @@ module.exports = {
                         "BoutMessengerUserIntro" : false,
                         "BoutMessengerVerifyOtp" : false,
                         "userstate" : {
-                            "project_id" : "20000",
-                            "uuid" : "57fe4b504600006b00b0a8b4",
-                            "email" : "kamo.rahul@gmail.com",
-                            "cookie" : true,
-                            "agent_id" : "34j23jg23413jh1234g23j4h123jh"
+                            "project_id" : "1000074",
                         },
-                        "default" : "BoutMessengerInbox",
+                        "default" : "BoutMessengerUserInfo",
                         // "banner_type" : "floater"
                     }
                 }
             }
         ]
     },
-    visitor : {
+    CookieUser : {
         "containers": [
             {
                 "container_id": "widget",
                 "container_context": {
-                    "properties": launcher.launch,
+                    "properties": launcher.floater,
                     "actions":[
                         {
                             "element_id" : "betaout_action",
@@ -168,21 +164,157 @@ module.exports = {
                         "BoutMessengerChatArea" : true,
                         "BoutMessengerInbox" : true,
                         "BoutTeamMembers" : true,
-                        "BoutMessengerUserInfo" : true,
+                        "BoutMessengerUserInfo" : false,
                         "BoutMessengerUserIntro" : false,
-                        "BoutMessengerVerifyOtp" : true,
+                        "BoutMessengerVerifyOtp" : false,
+                        "BoutMessengerInitiateChat" : true,
                         "userstate" : {
-                            "project_id" : "20000",
-                            "campaign_id" : "",
-                            "agent_id" : "34j23jg23413jh1234g23j4h123jh"
+                            "project_id" : "1000074",
+                            "campaign_id" : "345fefdsf234f23cf4",
+                            "uuid" : "587f5cc755000057003899c2",
+                            "email" : "kamo.rahul@gmail.com",
+                            "cookie" : true
                         },
-                        "default" : "BoutMessengerUserInfo",
-                        "banner_type" : "floater"    //floater
+                        "default" : "BoutMessengerChatArea"
                     }
                 }
             }
         ]
     }
 }
+
+//  Launcher // user with no data
+
+//visitor : {
+// "containers": [
+//     {
+//         "container_id": "widget",
+//         "container_context": {
+//             "properties": launcher.launch,
+//             "actions":[
+//                 {
+//                     "element_id" : "betaout_action",
+//                     "action_type": "onclick",   //greeter "onclick" //floater "onmouseover"
+//                     "action_impact": "function",
+//                     "action_data": "activateChat"
+//                 }
+//             ]
+//         }
+//     },
+//     {
+//         "container_id": "chatapp",
+//
+//         "container_context": {
+//             "properties" : {
+//                 "BoutMessengerChatArea" : true,
+//                 "BoutMessengerInbox" : true,
+//                 "BoutTeamMembers" : true,
+//                 "BoutMessengerUserInfo" : true,
+//                 "BoutMessengerUserIntro" : false,
+//                 "BoutMessengerVerifyOtp" : true,
+//                 "userstate" : {
+//                     "project_id" : "20000",
+//                     "campaign_id" : "345fefdsf234f23cf4",
+//                     "agent_id" : "34j23jg23413jh1234g23j4h123jh"
+//                 },
+//                 "default" : "BoutMessengerUserInfo",
+//                 "banner_type" : "floater"    //floater
+//             }
+//         }
+//     }
+// ]
+// }
+//
+
+// Greeter Floater //
+
+// visitor : {
+//     "containers": [
+//         {
+//             "container_id": "widget",
+//             "container_context": {
+//                 "properties": launcher.floater,
+//                 "actions":[
+//                     {
+//                         "element_id" : "betaout_action",
+//                         "action_type": "onclick",   //greeter "onclick" //floater "onmouseover"
+//                         "action_impact": "function",
+//                         "action_data": "activateChat"
+//                     }
+//                 ]
+//             }
+//         },
+//         {
+//             "container_id": "chatapp",
+//
+//             "container_context": {
+//                 "properties" : {
+//                     "BoutMessengerChatArea" : true,
+//                     "BoutMessengerInbox" : true,
+//                     "BoutTeamMembers" : true,
+//                     "BoutMessengerUserInfo" : false,
+//                     "BoutMessengerUserIntro" : true,
+//                     "BoutMessengerVerifyOtp" : true,
+//                     "userstate" : {
+//                         "project_id" : "20000",
+//                         "campaign_id" : "345fefdsf234f23cf4",
+//                         "agent_id" : "34j23jg23413jh1234g23j4h123jh"
+//                     },
+//                     "default" : "BoutMessengerChatArea",
+//                     "banner_type" : "floater"    //floater
+//                 }
+//             }
+//         }
+//     ]
+// }
+// }
+
+// Existing User
+
+
+// visitor : {
+//     "containers": [
+//         {
+//             "container_id": "widget",
+//             "container_context": {
+//                 "properties": launcher.launch,
+//                 "actions":[
+//                     {
+//                         "element_id" : "betaout_action",
+//                         "action_type": "onclick",   //greeter "onclick" //floater "onmouseover"
+//                         "action_impact": "function",
+//                         "action_data": "activateChat"
+//                     }
+//                 ]
+//             }
+//         },
+//         {
+//             "container_id": "chatapp",
+//
+//             "container_context": {
+//                 "properties" : {
+//                     "BoutMessengerChatArea" : true,
+//                     "BoutMessengerInbox" : true,
+//                     "BoutTeamMembers" : true,
+//                     "BoutMessengerUserInfo" : false,
+//                     "BoutMessengerUserIntro" : true,
+//                     "BoutMessengerVerifyOtp" : true,
+//                     "userstate" : {
+//                         "project_id" : "20000",
+//                         "campaign_id" : "345fefdsf234f23cf4",
+//                         "uuid" : "587f5cc755000057003899c2",
+//                         "email" : "kamo.rahul@gmail.com",
+//                         "cookie" : true
+//                     },
+//                     "default" : "BoutMessengerInbox"
+//                 }
+//             }
+//         }
+//     ]
+// }
+// }
+
+//Existing user with campaign
+
 
 
