@@ -145,7 +145,7 @@ module.exports = {
             {
                 "container_id": "widget",
                 "container_context": {
-                    "properties": launcher.floater,
+                    "properties": launcher.launch,
                     "actions":[
                         {
                             "element_id" : "betaout_action",
@@ -164,7 +164,7 @@ module.exports = {
                         "BoutMessengerChatArea" : true,
                         "BoutMessengerInbox" : true,
                         "BoutTeamMembers" : true,
-                        "BoutMessengerUserInfo" : false,
+                        "BoutMessengerUserInfo" : true,
                         "BoutMessengerUserIntro" : false,
                         "BoutMessengerVerifyOtp" : false,
                         "BoutMessengerInitiateChat" : true,
@@ -175,7 +175,7 @@ module.exports = {
                             "email" : "kamo.rahul@gmail.com",
                             "cookie" : true
                         },
-                        "default" : "BoutMessengerChatArea"
+                        "default" : "BoutMessengerInbox"
                     }
                 }
             }
