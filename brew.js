@@ -27,7 +27,9 @@ app.post('/brew', function(req, res){
 	console.log("req.body.token_id",req.body.token_id)
 	console.log("req.body.user_data.email_id",req.body.user_data.email_id)
     var user_state = RecipieJson.CookieUser.containers[1].container_context.properties.userstate;
+    var user_state_visitor = RecipieJson.visitor.containers[1].container_context.properties.userstate;
     user_state.project_id = brewerData.project_id;
+    user_state_visitor.project_id = brewerData.project_id;
     if(req.body.token_id){
         user_state.uuid = brewerData.token_id;
         user_state.email = brewerData.user_data.email;
